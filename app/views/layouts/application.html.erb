@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DIEM DANH</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag '/assets/jquery.min'%>
+    <%= javascript_include_tag '/assets/jquery-confirm.min'%>
+    <%= javascript_include_tag '/assets/popper.min'%>
+    <%= stylesheet_link_tag    '/assets/bootstrap.min'%>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <p class="alert"><%= alert %></p>
+    </div>
+    <div class="container-fluid">
+      <%= yield %>
+      <%= include_gon %>
+    </div>
+
+  </body>
+</html>
