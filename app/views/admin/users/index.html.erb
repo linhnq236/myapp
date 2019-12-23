@@ -1,0 +1,51 @@
+<h2>Sign up</h2>
+
+<%= form_tag admin_users_path do %>
+
+  <div class="field">
+    <%= email_field(:email, params[:email], class: "form-control") %>
+  </div>
+  <div class="field">
+    <%= label_tag(:q, "Choose") %><br />
+    <%= select_tag :admin, options_for_select([["Quan tri","1"], ["Teacher","2"], ["Student","3"]]), class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Sign up", class: "btn btn-primary" %>
+  </div>
+<% end %>
+<table id="example" class="table table-striped table-bordered" style="width:100%">
+  <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Student code</th>
+        <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr data-id = "<%= user.id %>" class="user">
+        <td><%= user.person_name %></td>
+        <td><%= user.user.email%></td>
+        <td><%= user.code %></td>
+        <td>
+          <% if user.user.admin == 1 %>
+            Quan tri vien
+          <% elsif user.user.admin == 2 %>
+            teacher
+          <% else %>
+            Student
+          <% end %>
+       </td>
+    </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Student code</th>
+      <th>Role</th>
+    </tr>
+  </tfoot>
+</table>
