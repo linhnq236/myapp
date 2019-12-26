@@ -3,7 +3,7 @@
   <% @timetables.each do |timetable| %>
     <% if take_datetime(date.inspect) == take_datetime(timetable.course.start.inspect) %>
       <div class="<%= compare(date) %>" data-time = "<%= compare_time(timetable.course.lesson.start, timetable.course.lesson.end)%>" data-course = "<%= timetable.course_id%>">
-        <%= timetable.course.subject.subject_name%> (<%= timetable.course.lesson.lesson_name%>)
+        <%= timetable.course.subject.subject_name%> (<%= timetable.course.lesson.lesson_name%> - <%= timetable.course.room.room_name%>)
       </div>
     <% end %>
   <% end %>

@@ -1,4 +1,4 @@
-<%= form_tag "people/3", method:"PATCH" do %>
+<%= form_tag "/student/people/#{@people_id}", method:"PATCH" do %>
   <% @people.each do |p|%>
     <div class="field">
       <%= label_tag(:q, "Email") %><br />

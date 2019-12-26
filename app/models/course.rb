@@ -4,4 +4,5 @@ class Course < ApplicationRecord
   has_many :register_courses
   has_many :places
   belongs_to :lesson
+  belongs_to :room
 end

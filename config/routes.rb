@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :rooms
   resources :lessons
   devise_for :users
   resources :courses
@@ -15,10 +16,14 @@ Rails.application.routes.draw do
   end
   namespace "teacher" do
     resources :courses
+    get "timetable", to: "courses#timetable"
+    get "export", to: "places#export_checkin"
     resources :people
     resources :departments
     resources :subjects
     resources :places
+    resources :users
+    get "change", to: "users#change"
     root to: "places#index"
   end
   namespace "student" do

@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  lesson_name: MyString
-  start: 2019-12-23 15:55:58
-
-two:
-  lesson_name: MyString
-  start: 2019-12-23 15:55:58

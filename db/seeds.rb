@@ -22,6 +22,21 @@
   end
 end
 [
+  {id: 1,room_name: 'H01'},
+  {id: 2,room_name: 'H02'},
+  {id: 3,room_name: 'H03'},
+].each do |attr|
+  room = Room.find_by(id: attr[:id])
+  Room.transaction do
+    unless room
+      room = Room.new(attr)
+      room.save
+    else
+      room.update_attributes attr
+    end
+  end
+end
+[
   {id: 1,subject_name: 'English'},
   {id: 2,subject_name: 'Math'},
   {id: 3,subject_name: 'Physical'},
@@ -85,9 +100,9 @@ end
   end
 end
 [
-  {id: 1,subject_id: 1, lesson_id: 1, people_id: People.first.id, start: "23-12-2019", end: "23-2-2019", code: "12461", total: 60},
-  {id: 2,subject_id: 2, lesson_id: 2, people_id: People.second.id, start: "25-12-2019", end: "25-2-2019", code: "44549", total: 60},
-  {id: 3,subject_id: 3, lesson_id: 3, people_id: People.third.id, start: "30-12-2019", end: "23-2-2019", code: "41356", total: 60},
+  {id: 1,subject_id: 1, lesson_id: 1, people_id: People.first.id, start: "23-12-2019", end: "23-2-2019", code: "12461", total: 60, room_id: Room.first.id},
+  {id: 2,subject_id: 2, lesson_id: 2, people_id: People.second.id, start: "25-12-2019", end: "25-2-2019", code: "44549", total: 60, room_id: Room.second.id},
+  {id: 3,subject_id: 3, lesson_id: 3, people_id: People.third.id, start: "30-12-2019", end: "23-2-2019", code: "41356", total: 60, room_id: Room.third.id},
 ].each do |attr|
   course = Course.find_by(id: attr[:id])
   Course.transaction do
