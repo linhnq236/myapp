@@ -1,0 +1,10 @@
+<%= month_calendar  do |date| %>
+  <%= format_month_day(date) %>
+  <% @timetables.each do |timetable| %>
+    <% if take_datetime(date.inspect) == take_datetime(timetable.start.inspect) %>
+      <div>
+        <a href="/teacher/places?date=<%= date %>&id=<%= timetable.subject_id%>"><%= timetable.subject.subject_name%> (<%= timetable.lesson.lesson_name%> - <%= timetable.room.room_name%>)</a>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,0 +1,19 @@
+// Place all the styles related to the courses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.courses td, .registers td{
+  font-size: 18px !important;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+.subject .sub_subject a {
+  text-decoration: none;
+}
+.subject .sub_subject a:hover{
+  background: none !important;
+}
+.calendar-heading{
+  font-size: 20px;
+  text-align: center;
+}

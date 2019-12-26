@@ -1,0 +1,14 @@
+<div class="bg-light border-right" id="sidebar-wrapper">
+  <div class="sidebar-heading"><%= t("teacher.teacher")%></div>
+  <div id="MainMenu">
+    <div class="list-group panel">
+      <a href="/" class="list-group-item list-group-item-action bg-light"><i class="fa fa-bell" aria-hidden="true"></i> <%= t("teacher.notice")%></a>
+      <a href="/teacher/timetable" class="list-group-item list-group-item-action bg-light"><i class="fa fa-calendar" aria-hidden="true"></i> <%= t("teacher.timetable")%></a>
+      <div href="#demo4" class="list-group-item list-group-item-action" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-cog" aria-hidden="true"></i> <%= t("teacher.setting")%><i class="fa fa-caret-down float-right"></i></div>
+      <div class="collapse" id="demo4">
+        <a href="/teacher/people" class="list-group-item list-group-item-action bg-light"><i class="fa fa-user" aria-hidden="true"></i> <%= t("teacher.profile")%></a>
+        <a href="/teacher/change" class="list-group-item list-group-item-action bg-light"><i class="fa fa-key" aria-hidden="true"></i> <%= t("teacher.changepass")%></a>
+      </div>
+    </div>
+  </div>
+</div>

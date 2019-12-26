@@ -1,0 +1,42 @@
+<%= form_tag "/student/people/#{@people_id}", method:"PATCH" do %>
+  <% @people.each do |p|%>
+    <div class="field">
+      <%= label_tag(:q, "Email") %><br />
+      <input type="text" name="" value="<%= p.user.email%>", class="form-control" disabled>
+    </div>
+    <div class="field">
+      <%= label_tag(:q, "Name") %><br />
+      <input type="text" name="person_name" value="<%= p.person_name%>", class="form-control">
+    </div>
+    <div class="field">
+      <%= label_tag(:q, "Code") %><br />
+      <input type="text" name="code" value="<%= p.code%>", class="form-control">
+    </div>
+    <div class="field">
+      <%= label_tag(:q, "Sex") %><br />
+      <select class="form-control" name="sex">
+        <option value="0">Male</option>
+        <option value="1">Female</option>
+      </select>
+    </div>
+    <div class="field">
+      <%= label_tag(:q, "Born") %><br />
+      <input type="date" name="born" value="<%= p.born%>", class="form-control">
+    </div>
+    <div class="field">
+      <%= label_tag(:q, "Address") %><br />
+      <input type="text" name="address" value="<%= p.address%>", class="form-control">
+    </div>
+    <div class="field">
+      <%= label_tag(:q, "Telephone") %><br />
+      <input type="text" name="telephone" value="<%= p.telephone%>", class="form-control">
+    </div>
+    <div class="field">
+      <%= label_tag(:q, "Department") %><br />
+      <input type="text" name="telephone" value="<%= p.department.department_name%>", class="form-control" disabled >
+    </div>
+    <div class="actions text-center">
+      <%= submit_tag "Save", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+<% end %>

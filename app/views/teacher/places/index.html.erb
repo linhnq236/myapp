@@ -1,0 +1,35 @@
+<p>
+  <i class="fa fa-download text-dark h3" aria-hidden="true">
+    <%= link_to "CSV", teacher_places_path(format: "csv",date: @date, id: @id) %>
+  </i>
+</p>
+<table id= "example" class="table table-striped table-bordered" style="width:100%">
+  <thead>
+    <tr>
+      <th class="text-center"><%= t("teacher.student_code")%></th>
+      <th class="text-center"><%= t("teacher.name")%></th>
+      <th class="text-center"><%= t("teacher.check_in")%></th>
+      <th class="text-center"><%= t("teacher.date_checkin")%></th>
+      <th class="text-center"><%= t("teacher.status")%></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @places.each do |place| %>
+    <tr class="places">
+      <td class="text-center"><%= place.people.code %></td>
+      <td class="text-center"><%= place.people.person_name %></td>
+      <td class="text-center"><%= format_time(place.check_in_at) %></td>
+      <td class="text-center"><%= place.date %></td>
+    </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th class="text-center"><%= t("teacher.student_code")%></th>
+      <th class="text-center"><%= t("teacher.name")%></th>
+      <th class="text-center"><%= t("teacher.check_in")%></th>
+      <th class="text-center"><%= t("teacher.date_checkin")%></th>
+      <th class="text-center"><%= t("teacher.status")%></th>
+    </tr>
+  </tfoot>
+</table>

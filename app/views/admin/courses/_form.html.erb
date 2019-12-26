@@ -1,0 +1,13 @@
+<%= form_tag admin_courses_path do %>
+
+  <div class="field">
+    <%= email_field(:email, params[:email], class: "form-control") %>
+  </div>
+  <div class="field">
+    <%= label_tag(:q, "Choose") %><br />
+    <%= select_tag :admin, options_for_select([["Quan tri","1"], ["Teacher","2"], ["Student","3"]]), class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Sign up", class: "btn btn-primary" %>
+  </div>
+<% end %>
