@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Notes</h1>
+<h1><%= t("note.title") %></h1>
 
 <table>
   <thead>
@@ -15,15 +13,8 @@
     <% @notes.each do |note| %>
       <tr>
         <td><%= note.title %></td>
-        <td><%= note.content %></td>
-        <td><%= link_to 'Show', note %></td>
-        <td><%= link_to 'Edit', edit_note_path(note) %></td>
-        <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= convert_ckeditor(note.content) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Note', new_note_path %>

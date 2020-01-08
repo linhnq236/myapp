@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191225081152) do
+ActiveRecord::Schema.define(version: 20200105175154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.string   "type",              limit: 30
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["type"], name: "index_ckeditor_assets_on_type", using: :btree
+  end
 
   create_table "courses", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -50,6 +60,8 @@ ActiveRecord::Schema.define(version: 20191225081152) do
     t.string   "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "use"
+    t.boolean  "status"
   end
 
   create_table "people", force: :cascade do |t|
@@ -79,6 +91,15 @@ ActiveRecord::Schema.define(version: 20191225081152) do
     t.integer  "course_id"
     t.integer  "people_id"
     t.index ["course_id"], name: "index_places_on_course_id", using: :btree
+  end
+
+  create_table "points", force: :cascade do |t|
+    t.integer  "people_id"
+    t.date     "date"
+    t.float    "point"
+    t.integer  "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "register_courses", force: :cascade do |t|

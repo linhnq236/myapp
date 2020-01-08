@@ -17,3 +17,26 @@
   font-size: 20px;
   text-align: center;
 }
+.simple-calendar .day {
+  height: 120px !important;
+}
+.table {
+  tr {
+    th:nth-child(6) {
+    color: blue;
+    }
+    th:nth-child(7) {
+    color: red;
+    }
+
+    td:nth-child(6) {
+      color: blue;
+    }
+    td:nth-child(7) {
+      color: red;
+    }
+  }
+}
+.btn-next{
+  width: 65px !important;
+}

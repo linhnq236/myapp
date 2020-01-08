@@ -11,6 +11,7 @@ module Student
       gon.current_user = current_user.id
       if params[:id].present?
         @courses = Course.includes(:people).where(subject_id: params[:id])
+        @count_course = RegisterCourse.select("count(course_id) as amount").where(course_id: params[:id])
       else
         @courses = Course.includes(:people).where(subject_id: 0)
       end

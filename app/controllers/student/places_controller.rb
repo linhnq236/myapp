@@ -5,7 +5,7 @@ module Student
     # GET /places
     # GET /places.json
     def index
-      @places = Place.includes(:course)
+      @places = Place.includes(:course).where(people_id: current_user.id)
     end
 
     # GET /places/1

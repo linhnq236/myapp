@@ -20,4 +20,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  register_course:
+    title: "ĐIỂM DANH"
+    content: "VUI LÒNG CLICK NÚT DƯỚI ĐỂ ĐIỂM DANH"
+    success: "<h3 style='color:green'>THÀNH CÔNG</h3>"
+    exists:  "<h3 style='color:red'>BẠN ĐÃ ĐIỂM DANH RỒI !</h3>"
+    checkin: "ĐIỂM DANH"
+    note: "THÔNG BÁO"
+    nottime: "CHƯA TỚI GIỜ ĐIỂM DANH"
+    reg_content: "ĐĂNG KÝ THÀNH CÔNG"
+    exists: "ĐÃ ĐĂNG KÝ"
+    exists_checkin: "ĐÃ ĐIỂM DANH VÀO"
+    exists_checkout: "ĐÃ ĐIỂM DANH RA"
+
   hello: "Hello world"

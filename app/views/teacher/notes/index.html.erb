@@ -1,0 +1,27 @@
+<div class="note">
+  <h1><%= t("note.title")%></h1>
+  <% @notes.each do |note| %>
+  <a href="/teacher/notes/<%=note.id%>" class= "text-uppercase list-group-item list-group-item-action bg-light">
+    <%= note.title%>
+    <small>
+      <div class="font-italic"><%= t("note.created_at")%>: <%=format_date(note.created_at)%> </div>
+    </small>
+  </a>
+  <br>
+  <% end %>
+  <%= will_paginate @notes, :renderer => WillPaginate::ActionView::LinkRenderer%>
+</div>
+<hr>
+<div class="note_all">
+  <h1><%= t("note_all.title")%></h1>
+  <% @note_all.each do |note| %>
+  <a href="/teacher/notes/<%=note.id%>" class= "text-uppercase list-group-item list-group-item-action bg-light">
+    <%= note.title%>
+    <small>
+      <div class="font-italic"><%= t("note.created_at")%>: <%=format_date(note.created_at)%> </div>
+    </small>
+  </a>
+  <br>
+  <% end %>
+  <%= will_paginate @notes, :renderer => WillPaginate::ActionView::LinkRenderer%>
+</div>

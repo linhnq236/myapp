@@ -24,6 +24,10 @@
         <div id="page-content-wrapper">
           <%= render "layouts/share/admin/menu"%>
           <div class="container-fluid">
+
+            <% if flash[:notice] %>
+              <div class="notice"><%= flash[:notice] %></div>
+            <% end %>
             <%= yield %>
             <%= include_gon %>
           </div>
@@ -36,6 +40,9 @@
           <div id="page-content-wrapper">
             <%= render "layouts/share/teacher/header"%>
             <div class="container-fluid">
+              <% if flash[:notice] %>
+                <div class="notice"><%= flash[:notice] %></div>
+              <% end %>
               <%= yield %>
               <%= include_gon %>
             </div>
@@ -49,6 +56,9 @@
           <div id="page-content-wrapper">
             <%= render "layouts/share/student/header"%>
             <div class="container-fluid">
+              <% if flash[:notice] %>
+                <div class="notice"><%= flash[:notice] %></div>
+              <% end %>
               <%= yield %>
               <%= include_gon %>
             </div>
@@ -60,6 +70,9 @@
         <div class="d-flex" id="wrapper">
           <div id="page-content-wrapper">
             <div class="container-fluid">
+              <% if flash[:notice] %>
+                <div class="notice"><%= flash[:notice] %></div>
+              <% end %>
               <%= yield %>
               <%= include_gon %>
             </div>

@@ -3,6 +3,14 @@ vn:
     download: "TẢI VỀ"
     logout: "ĐĂNG XUẤT"
     togglemenu: "Click"
+    choose: "CHỌN"
+    content: "NỘI DUNG"
+    title: "TIÊU ĐỀ"
+    save: "LƯU"
+    id: "STT"
+  will_paginate:
+    previous_label: "Trước"
+    next_label: "Sau"
   simple_calendar:
     previous: "Trước"
     next: "Sau"
@@ -11,8 +19,63 @@ vn:
     month_names: " Tháng "
     year_names: " Năm "
   admin:
+    left:
+      add_bar: "THÊM"
+      add:
+      add_user: "TÀI KHOẢN MỚI"
+      add_subject: "MÔN HỌC MỚI"
+      add_course: "LỊCH HỌC MỚI"
+      add_notice: "THÔNG BÁO MỚI"
+      setting:
+        name: "CÀI ĐẶT"
+        profile: "CÁ NHÂN"
+        changepass: "THAY ĐỔI MẬT KHẨU"
+    all: "TẤT CẢ"
+    lock: "Khóa"
+    unlock: "Mở khóa"
+    user:
+      title: "THÊM TÀI KHOẢN"
+      email: "EMAIL"
+      choose: "CHỌN"
+      add: "THÊM"
+    subject:
+      title: "THÊM MÔN HỌC"
+      name: "MÔN HỌC"
+      add: "THÊM"
+    course:
+      title: "THÊM LỊCH HỌC MỚI"
+      code: "Mã"
+      subject: "Môn học"
+      teacher: "Giáo viên"
+      start: "Bắt đầu"
+      end: "Kết thúc"
+      total: "Số lượng"
+      lesson: "Tiết"
+      room: "Phòng"
+      add: "THÊM"
   student:
-    notice: "THÔNG BÁO"
+    student: "SINH VIÊN"
+    left:
+      notice: "THÔNG BÁO"
+      checkin: "ĐÃ ĐIỂM DANH"
+      timetable: "LỊCH HỌC"
+      register: "ĐĂNG KÝ MÔN HỌC"
+      profile: "CÁ NHÂN"
+      changepass: "THAY ĐỔI MẬT KHẨU"
+    place:
+      checkin: "Vào"
+      checkout: "Ra"
+      subject: "Môn"
+    course:
+      title: "THÊM LỊCH HỌC MỚI"
+      code: "Mã"
+      subject: "Môn học"
+      teacher: "Giáo viên"
+      start: "Bắt đầu"
+      end: "Kết thúc"
+      total: "Số lượng"
+      register: "Đăng ký"
+
   teacher:
     teacher: "GIÁO VIÊN"
     notice: "THÔNG BÁO"
@@ -25,3 +88,13 @@ vn:
     status: "TÌNH TRẠNG"
     setting: "CÀI ĐẶT"
     changepass: "THAY ĐỔI MẬT KHẨU"
+  note:
+    title: "THÔNG BÁO"
+    all: "Tất cả"
+    teacher: "Giáo viên"
+    student: "Sinh viên"
+    created_at: "Ngày đăng"
+  note_all:
+    title: "THÔNG BÁO CHUNG"
+  control:
+    notice: "Cập nhật thông tin cá nhân"

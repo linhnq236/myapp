@@ -1,19 +1,20 @@
 <div class="bg-light border-right" id="sidebar-wrapper">
-  <div class="sidebar-heading">Admin </div>
+  <div class="sidebar-heading"><%= current_account(@current_acc)%>
+   </div>
   <div class="list-group list-group-flush">
     <div id="MainMenu">
-      <div class="list-group panel">
-        <div href="#add" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Add <i class="fa fa-caret-down float-right "></i></div>
-        <div class="collapse" id="add">
-          <%= link_to "Add user", "/admin/users", class:"list-group-item list-group-item-action bg-light"%>
-          <%= link_to "Add subject", "/admin/subjects", class:"list-group-item list-group-item-action bg-light"%>
-          <%= link_to "Add course", "/admin/courses", class:"list-group-item list-group-item-action bg-light"%>
+      <div class="list-group panel text-left">
+        <div href="#add" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-plus"></i> <%= I18n.t("admin.left.add_bar")%> <i class="fa fa-caret-down float-right "></i></div>
+        <div class="collapse text-left" id="add">
+          <a href="/admin/users", class="list-group-item list-group-item-action bg-light"><i class='fa fa-user'></i> <%= t("admin.left.add_user")%></a>
+          <a href="/admin/subjects", class="list-group-item list-group-item-action bg-light"><i class='fa fa-file'></i> <%= t("admin.left.add_subject")%></a>
+          <a href="/admin/courses", class="list-group-item list-group-item-action bg-light"><i class='fa fa-book'></i> <%= t("admin.left.add_course")%></a>
+          <a href="/admin/notes/new", class="list-group-item list-group-item-action bg-light"><i class='fa fa-bell'></i> <%= t("admin.left.add_notice")%></a>
         </div>
-        <div href="#demo4" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Item 4 <i class="fa fa-caret-down float-right"></i></div>
+        <div href="#demo4" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu"><i class='fa fa-cog'></i> <%= t("admin.left.setting.name")%> <i class="fa fa-caret-down float-right"></i></div>
         <div class="collapse" id="demo4">
-          <a href="" class="list-group-item list-group-item-action bg-light">Subitem 1</a>
-          <a href="" class="list-group-item list-group-item-action bg-light">Subitem 2</a>
-          <a href="" class="list-group-item list-group-item-action bg-light">Subitem 3</a>
+          <a href="" class="list-group-item list-group-item-action bg-light"><i class='fa fa-user'></i> <%= t("admin.left.setting.profile")%> </a>
+          <a href="" class="list-group-item list-group-item-action bg-light"><i class='fa fa-key'></i> <%= t("admin.left.setting.changepass")%> </a>
         </div>
       </div>
     </div>

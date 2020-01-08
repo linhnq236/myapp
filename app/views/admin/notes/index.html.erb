@@ -1,29 +1,22 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Notes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @notes.each do |note| %>
-      <tr>
-        <td><%= note.title %></td>
-        <td><%= note.content %></td>
-        <td><%= link_to 'Show', note %></td>
-        <td><%= link_to 'Edit', edit_note_path(note) %></td>
-        <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Note', new_note_path %>
+<div class="note">
+  <h1><%= t("note.title")%></h1>
+  <% @notes.each do |note| %>
+  <a href="/admin/notes/<%=note.id%>" class= "text-uppercase list-group-item list-group-item-action bg-light">
+    <%= note.title%>
+    <small>
+      <div class="font-italic"><%= t("note.created_at")%>: <%=format_date(note.created_at)%> </div>
+      <div class="">
+        <% if note.use == 1 %>
+            <span><%= t("note.all")%></span>
+        <% elsif note.use == 2 %>
+          <span><%= t("note.teacher")%></span>
+        <% else %>
+          <span><%= t("note.student")%></span>
+        <% end %>
+      </div>
+    </small>
+  </a>
+  <br>
+  <% end %>
+  <%= will_paginate @notes, :renderer => WillPaginate::ActionView::LinkRenderer%>
+</div>

@@ -11,5 +11,13 @@ module Teacher
         format.csv { render text: @places.to_csv }
       end
     end
+
+    def export_course
+      @places = Place.includes(:people).where(course_id: params[:id])
+      respond_to do |format|
+        format.html
+        format.csv { render text: @places.to_csv }
+      end
+    end
   end
 end

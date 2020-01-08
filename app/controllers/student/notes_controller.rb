@@ -1,16 +1,18 @@
 module Student
   class NotesController < StudentController
     before_action :set_note, only: [:show, :edit, :update, :destroy]
-
+    DEFAULT_PER_PAGE = 4
     # GET /notes
     # GET /notes.json
     def index
-      @notes = Note.all
+      @note_all = Note.order("created_at DESC").where(use: 1)
+      @notes = Note.order("created_at DESC").where(use: 3).paginate(:page => params[:page], :per_page => DEFAULT_PER_PAGE)
     end
 
     # GET /notes/1
     # GET /notes/1.json
     def show
+      @note = Note.where(id: params[:id])
     end
 
     # GET /notes/new

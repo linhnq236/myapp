@@ -11,6 +11,7 @@
       <th class="text-center"><%= t("teacher.check_in")%></th>
       <th class="text-center"><%= t("teacher.date_checkin")%></th>
       <th class="text-center"><%= t("teacher.status")%></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -20,6 +21,22 @@
       <td class="text-center"><%= place.people.person_name %></td>
       <td class="text-center"><%= format_time(place.check_in_at) %></td>
       <td class="text-center"><%= place.date %></td>
+      <td class="text-center"><%= check_location(place.lat.to_i, place.lon.to_i, place.course.room.lat.to_i,place.course.room.lon.to_i )%></td>
+      <td class="text-center cursor-pointer">
+        <div class='col-xs-1' style="margin-left:-0.9%" >
+          <%= form_tag('/teacher/points', method: :post, id: "changePage") do %>
+          <div class="d-none">
+            <input type="text" name="people_id" value="<%= place.people_id%>">
+            <input type="text" name="date" value="<%= place.date%>">
+            <input type="text" name="course_id" value="<%= place.course_id%>">
+          </div>
+            <%= select_tag 'point',
+              options_for_select([["+0.5","0.5"], ["+1.0","1"], ["+1.5","1.5"], ["+2.0","2"],["-0.5","-0.5"], ["-1.0","-1"], ["-1.5","-1."], ["-2.0","-2"]], selected: params[:per_page]),
+              {onchange: "$('#changePage').submit();" }
+            %>
+          <% end %>
+        </div>
+      </td>
     </tr>
     <% end %>
   </tbody>
@@ -30,6 +47,7 @@
       <th class="text-center"><%= t("teacher.check_in")%></th>
       <th class="text-center"><%= t("teacher.date_checkin")%></th>
       <th class="text-center"><%= t("teacher.status")%></th>
+      <th></th>
     </tr>
   </tfoot>
 </table>
