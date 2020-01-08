@@ -1,0 +1,13 @@
+<% @note.each do |note|%>
+  <div class="bg-light-blue">
+    <div class="container-fluid text-uppercase bg-primary text-light">
+      <%= note.title%>
+    </div>
+  </div>
+  <div class="">
+    <%= convert_ckeditor(note.content)%>
+  </div>
+  <small>
+    <div class="font-italic"><%= t("note.created_at")%>: <%=format_date(note.created_at)%> </div>
+  </small>
+<% end %>

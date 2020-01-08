@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   resources :rooms
   resources :lessons
   devise_for :users
@@ -6,25 +7,29 @@ Rails.application.routes.draw do
   root to: "notes#index"
   resources :notes
   namespace "admin" do
+    resources :notes
     resources :register_courses
     resources :users
     resources :courses
     resources :people
     resources :subjects
     resources :places
-    root to: "places#index"
+    patch "check_out", to: "places#check_out"
+    root to: "notes#index"
   end
   namespace "teacher" do
     resources :courses
     get "timetable", to: "courses#timetable"
-    get "export", to: "places#export_checkin"
+    get "export", to: "places#export_course"
+    resources :points
     resources :people
     resources :departments
     resources :subjects
     resources :places
     resources :users
+    resources :notes
     get "change", to: "users#change"
-    root to: "places#index"
+    root to: "notes#index"
   end
   namespace "student" do
     resources :courses
@@ -35,6 +40,7 @@ Rails.application.routes.draw do
     resources :departments
     resources :subjects
     resources :places
+    resources :notes
     root to: "courses#timetable"
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

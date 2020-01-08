@@ -8,6 +8,8 @@ module Admin
       @courses = Course.includes(:people, :subject)
       @subjects = Subject.all
       @users = People.includes(:user)
+      @lessons = Lesson.all
+      @rooms = Room.all
     end
 
     # GET /courses/1
@@ -29,10 +31,9 @@ module Admin
     def create
       @course = Course.new(params_course)
       if @course.save
-        render json: {data: @course}
-        # redirect_to "/admin/courses"
+        redirect_to "/admin/courses"
       else
-        render json: {data: @course.errors}
+        redirect_to "/admin/courses"
       end
     end
 
@@ -50,7 +51,7 @@ module Admin
 
   private
     def params_course
-      params.require(:course).permit(:code, :people_id, :subject_id, :start, :end, :total)
+      params.require(:course).permit(:code, :people_id, :subject_id, :start, :end, :total, :lesson_id, :room_id)
     end
   end
 end

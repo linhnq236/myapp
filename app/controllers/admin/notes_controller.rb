@@ -1,18 +1,16 @@
 module Admin
   class NotesController < AdminController
-    before_action :set_note, only: [:show, :edit, :update, :destroy]
+    DEFAULT_PER_PAGE = 10
 
-    # GET /notes
-    # GET /notes.json
     def index
-      @notes = Note.all
+      @notes = Note.order("created_at DESC").paginate(:page => params[:page], :per_page => DEFAULT_PER_PAGE)
+      @note_teachers = Note.order("created_at DESC").where(use: 1).paginate(:page => params[:page], :per_page => DEFAULT_PER_PAGE)
+      @note_students = Note.order("created_at DESC").where(use: 2).paginate(:page => params[:page], :per_page => DEFAULT_PER_PAGE)
     end
 
-    # GET /notes/1
-    # GET /notes/1.json
     def show
+      @note = Note.where(id: params[:id])
     end
-
     # GET /notes/new
     def new
       @note = Note.new
@@ -25,16 +23,11 @@ module Admin
     # POST /notes
     # POST /notes.json
     def create
-      @note = Note.new(note_params)
-
-      respond_to do |format|
-        if @note.save
-          format.html { redirect_to @note, notice: 'Note was successfully created.' }
-          format.json { render :show, status: :created, location: @note }
-        else
-          format.html { render :new }
-          format.json { render json: @note.errors, status: :unprocessable_entity }
-        end
+      @note = Note.new(note_params.merge(use: params[:use], status: 1))
+      if @note.save
+        redirect_to :admin_notes
+      else
+        render json:{data: @note.errors}
       end
     end
 
@@ -63,11 +56,9 @@ module Admin
     end
 
     private
-      # Use callbacks to share common setup or constraints between actions.
-      def set_note
-        @note = Note.find(params[:id])
-      end
-
+    def set_note
+      @note = Note.find(params[:id])
+    end
       # Never trust parameters from the scary internet, only allow the white list through.
       def note_params
         params.require(:note).permit(:title, :content)

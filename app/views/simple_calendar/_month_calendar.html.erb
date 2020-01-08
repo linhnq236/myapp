@@ -1,8 +1,8 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
-    <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view, class: "float-left bg-primary text-light p-1 btn-pre" %>
+    <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view, class: "float-left bg-primary text-light p-1 btn-pre text-decoration-none btn btn-lg btn-pre" %>
       <span class="calendar-title p-4 "><%= I18n.t("date.month_names")%><%= start_date.month %><%= I18n.t("date.year_names") %><%= start_date.year %></span>
-    <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view , class: "float-right bg-primary text-light p-1 btn-next"%>
+    <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view , class: "float-right bg-primary text-light p-1 btn-next text-decoration-none btn btn-lg btn-next"%>
   </div>
 
   <table class="table table-striped">

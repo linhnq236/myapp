@@ -3,15 +3,17 @@
   <% @places.each do |place| %>
     <% if take_datetime(date.inspect) == take_datetime(place.course.start.inspect) %>
       <% if format_date(date) == format_date(place.date)%>
-        <div><%= place.course.subject.subject_name%></div>
+        <div>
+          <%= t("student.place.subject")%>: <%= place.course.subject.subject_name%>
+        </div>
         <% unless place.check_in_at.nil?%>
         <div>
-          Check in: <%= format_time(place.check_in_at)%>
+          <%= t("student.place.checkin")%>: <%= format_time(place.check_in_at)%>
         </div>
         <% end %>
         <% unless place.check_out_at.nil?%>
         <div>
-          Check out: <%= format_time(place.check_out_at)%>
+          <%= t("student.place.checkout")%>: <%= format_time(place.check_out_at)%>
         </div>
         <% end %>
       <% end %>

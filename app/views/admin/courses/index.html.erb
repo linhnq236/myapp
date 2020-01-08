@@ -1,44 +1,52 @@
-<h2>Create new course</h2>
+<h2><%= t("admin.course.title")%></h2>
 
 <%= form_tag admin_courses_path do %>
 
   <div class="field">
-    <%= label_tag(:q, "Code") %><br />
+    <%= label_tag(:q, "#{I18n.t("admin.course.code")}") %><br />
      <%= text_field("course", "code", class: "form-control")%>
   </div>
   <div class="field">
-    <%= label_tag(:q, "Subject") %><br />
-     <%= select("course", "subject_id", @subjects.collect {|p| [ p.subject_name, p.id ] }, { include_blank: " Select " }, class: "form-control")%>
+    <%= label_tag(:q, "#{I18n.t("admin.course.subject")}") %><br />
+     <%= select("course", "subject_id", @subjects.collect {|p| [ p.subject_name, p.id ] }, { include_blank: " #{I18n.t("admin.course.subject")} " }, class: "form-control")%>
   </div>
   <div class="field">
-    <%= label_tag(:q, "Teacher") %><br />
+    <%= label_tag(:q, "#{I18n.t("admin.course.teacher")}") %><br />
      <%= select("course", "people_id" , @users.collect {|p| [ p.person_name, p.id] }, { include_blank: "Select" }, class: "form-control")%>
   </div>
   <div class="field">
-    <%= label_tag(:q, "Start") %><br />
+    <%= label_tag(:q, "#{I18n.t("admin.course.lesson")}") %><br />
+     <%= select("course", "lesson_id" , @lessons.collect {|p| [ p.lesson_name, p.id] }, { include_blank: "Select" }, class: "form-control")%>
+  </div>
+  <div class="field">
+    <%= label_tag(:q, "#{I18n.t("admin.course.room")}") %><br />
+     <%= select("course", "room_id" , @rooms.collect {|p| [ p.room_name, p.id] }, { include_blank: "Select" }, class: "form-control")%>
+  </div>
+  <div class="field">
+    <%= label_tag(:q, "#{I18n.t("admin.course.start")}") %><br />
     <%= date_field("course", "start", class: "form-control") %>
   </div>
   <div class="field">
-    <%= label_tag(:q, "End") %><br />
+    <%= label_tag(:q, "#{I18n.t("admin.course.end")}") %><br />
     <%= date_field("course","end", class: "form-control") %>
   </div>
   <div class="field">
-    <%= label_tag(:q, "Total") %><br />
+    <%= label_tag(:q, "#{I18n.t("admin.course.total")}") %><br />
      <%= number_field("course", "total", class: "form-control")%>
   </div>
   <div class="actions">
-    <%= submit_tag "Create", class: "btn btn-primary" %>
+    <%= submit_tag "#{I18n.t("admin.course.add")}", class: "btn btn-primary" %>
   </div>
 <% end %>
 <table id="example" class="table table-striped table-bordered" style="width:100%">
   <thead>
     <tr>
-      <th>Code</th>
-      <th>Subject</th>
-      <th>Start</th>
-      <th>End</th>
-      <th>Teacher</th>
-      <th>Total</th>
+      <th><%= I18n.t("admin.course.code") %></th>
+      <th><%= I18n.t("admin.course.subject") %></th>
+      <th><%= I18n.t("admin.course.teacher") %></th>
+      <th><%= I18n.t("admin.course.total") %></th>
+      <th><%= I18n.t("admin.course.start") %></th>
+      <th><%= I18n.t("admin.course.end") %></th>
       <th></th>
     </tr>
   </thead>
@@ -47,25 +55,25 @@
     <tr data-id = "<%= course.id %>" class="user">
       <td><%= course.code %></td>
       <td><%= course.subject.subject_name %></td>
+      <td><%= course.people.person_name %></td>
       <td><%= course.start %></td>
       <td><%= course.end %></td>
-      <td><%= course.people.person_name %></td>
       <td><%= course.total %></td>
       <td>
-        <button type="button" name="button">Edit</button>
-        <button type="button" name="button">Delete</button>
+        <button type="button" name="button" class="btn btn-primary"><i class="fa fa-edit"></i></button>
+        <button type="button" name="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
       </td>
     </tr>
     <% end %>
   </tbody>
   <tfoot>
     <tr>
-      <th>Code</th>
-      <th>Subject</th>
-      <th>Start</th>
-      <th>End</th>
-      <th>Teacher</th>
-      <th>Total<th>
+      <th><%= I18n.t("admin.course.code") %></th>
+      <th><%= I18n.t("admin.course.subject") %></th>
+      <th><%= I18n.t("admin.course.teacher") %></th>
+      <th><%= I18n.t("admin.course.total") %></th>
+      <th><%= I18n.t("admin.course.start") %></th>
+      <th><%= I18n.t("admin.course.end") %></th>
       <th></th>
     </tr>
   </tfoot>

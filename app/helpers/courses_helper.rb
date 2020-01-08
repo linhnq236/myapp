@@ -17,11 +17,14 @@ module CoursesHelper
   end
   def compare_time start, finsh
     current_time = Time.now.to_time
-    if current_time >= start && current_time <= finsh
+    if current_time >= start
       # && current_time <= finsh
       return 1
     else
       return -1
     end
+  end
+  def amount_course amount
+    return amount.size
   end
 end

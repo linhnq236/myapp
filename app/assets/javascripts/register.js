@@ -15,8 +15,9 @@ $( document ).on('turbolinks:load', function() {
        console.log(response);
        if (response['data'] == 1){
          $.confirm({
-          title: 'Notice !',
-          content: 'Success!',
+          title: I18n.t("register_course.note"),
+          content: I18n.t("register_course.reg_content"),
+          closeIcon: true,
           buttons: {
             confirm: function () {
               location.reload();
@@ -25,18 +26,19 @@ $( document ).on('turbolinks:load', function() {
         });
        }else{
          $.confirm({
-          title: 'Notice !',
-          content: 'Exists!',
+          title: I18n.t("register_course.note"),
+          content: I18n.t("register_course.exists"),
+          closeIcon: true,
           buttons: {
             confirm: function () {
-              location.reload();
+              // location.reload();
             },
           }
         })
       }
      },
      error: function(response){
-       location.reload();
+       // location.reload();
      }
    })
   })

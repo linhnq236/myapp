@@ -1,14 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @note.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @note.content %>
-</p>
-
-<%= link_to 'Edit', edit_note_path(@note) %> |
-<%= link_to 'Back', notes_path %>
+<% @note.each do |note|%>
+  <div class="container-fluid text-uppercase bg-primary text-light">
+    <%= note.title%>
+  </div>
+  <div class="">
+    <%= convert_ckeditor(note.content)%>
+  </div>
+  <small>
+    <div class="font-italic"><%= t("note.created_at")%>: <%=format_date(note.created_at)%> </div>
+  </small>
+<% end %>

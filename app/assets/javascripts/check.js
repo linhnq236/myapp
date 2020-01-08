@@ -25,8 +25,8 @@ $( document ).on('turbolinks:load', function() {
     var time = $(this).data("time");
     if (time == -1){
       $.dialog({
-        title: 'Notice',
-        content: 'Not yet set time',
+        title: I18n.t("register_course.note"),
+        content: I18n.t("register_course.nottime"),
       });
     }else{
       dataPlace = {
@@ -36,11 +36,11 @@ $( document ).on('turbolinks:load', function() {
         people_id: gon.current_user
       };
       $.confirm({
-        title: 'Check in',
-        content: 'Please click button check in !',
+        title: I18n.t("register_course.title"),
+        content: I18n.t("register_course.content"),
         closeIcon: true,
         buttons: {
-          Checkin:{
+          VÀO:{
             action: function(){
               $.ajax({
                 type: "POST",
@@ -49,18 +49,46 @@ $( document ).on('turbolinks:load', function() {
                 success: function(response){
                   if(response['data'] == 1){
                     $.alert({
-                      title: false,
-                      content: "<h3 style='color:green'>SUCCESS</h3>",
+                      title: I18n.t("register_course.note"),
+                      content:  I18n.t("register_course.success"),
                     });
                   }else{
                     $.alert({
-                      title: false,
-                      content: "<h3 style='color:red'>EXISTS</h3>",
+                      title: I18n.t("register_course.note"),
+                      content:  I18n.t("register_course.exists_checkin"),
                     });
                   }
                 },
                 error: function(response){
+                  // location.reload();
+                }
+              })
+            }
+          },
+          RA:{
+            action: function(){
+              $.ajax({
+                type: "PATCH",
+                url: "/admin/check_out",
+                data: {
+                  course_id: course_id,
+                  people_id: gon.current_user
+                },
+                success: function(response){
                   console.log(response);
+                  if(response['data'] == 1){
+                    $.alert({
+                      title: I18n.t("register_course.note"),
+                      content:  I18n.t("register_course.success"),
+                    });
+                  }else{
+                    $.alert({
+                      title: I18n.t("register_course.note"),
+                      content:  I18n.t("register_course.exists_checkout"),
+                    });
+                  }
+                },
+                error: function(response){
                   // location.reload();
                 }
               })
