@@ -1,5 +1,5 @@
-<div class="container">
-  <h2><%= t("devise.title_login")%></h2>
+<div class="container login">
+  <h2 class="text-center pt-4"><%= t("devise.title_login")%></h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
@@ -19,8 +19,8 @@
       </div>
     <% end %>
 
-    <div class="actions">
-      <%= f.submit "#{I18n.t("devise.btn_login")}", class: "btn btn-primary" %>
+    <div class="actions text-center border-btn">
+      <%= f.submit "#{I18n.t("devise.btn_login")}", class: "btn btn-primary text-center mb-4" %>
     </div>
   <% end %>
 </div>

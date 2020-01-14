@@ -50,9 +50,9 @@ vn:
       updated: "Tài khoản của bạn đã cập nhật thành công."
       updated_but_not_signed_in: "Tài khoản của bạn đã được cập nhật thành công, nhưng vì mật khẩu của bạn đã được thay đổi, bạn cần đăng nhập lại."
     sessions:
-      signed_in: "Đăng kí thành công."
-      signed_out: "Đăng nhập thành công."
-      already_signed_out: "Đăng nhập thành công."
+      signed_in: "Đăng nhập thành công."
+      signed_out: "Đăng xuất thành công."
+      already_signed_out: "Bạn đã đăng nhập."
     unlocks:
       send_instructions: "Bạn sẽ nhận được một email với các hướng dẫn về cách mở khóa tài khoản của bạn trong vài phút."
       send_paranoid_instructions: "Nếu tài khoản của bạn tồn tại, bạn sẽ nhận được email có hướng dẫn cách mở khóa trong vài phút."
@@ -66,4 +66,4 @@ vn:
       not_locked: "Không bị khóa"
       not_saved:
         one: "1 lỗi đã cấm %{resource} này được lưu:"
-        other: "%{Count} lỗi đã cấm% {resource} này được lưu:"
+        other: "%{Count} lỗi đã cấm %{resource} này được lưu:"

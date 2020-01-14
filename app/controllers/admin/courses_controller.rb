@@ -45,8 +45,10 @@ module Admin
 
     # DELETE /courses/1
     # DELETE /courses/1.json
-    def destroy
-
+    def delete
+      if Course.delete(params[:id])
+        redirect_to "/admin/courses"
+      end
     end
 
   private

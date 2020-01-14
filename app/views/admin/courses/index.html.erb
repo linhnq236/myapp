@@ -38,15 +38,15 @@
     <%= submit_tag "#{I18n.t("admin.course.add")}", class: "btn btn-primary" %>
   </div>
 <% end %>
-<table id="example" class="table table-striped table-bordered" style="width:100%">
+<table id="example" class="table table-striped table-bordered text-center" style="width:100%">
   <thead>
     <tr>
       <th><%= I18n.t("admin.course.code") %></th>
       <th><%= I18n.t("admin.course.subject") %></th>
       <th><%= I18n.t("admin.course.teacher") %></th>
-      <th><%= I18n.t("admin.course.total") %></th>
       <th><%= I18n.t("admin.course.start") %></th>
       <th><%= I18n.t("admin.course.end") %></th>
+      <th><%= I18n.t("admin.course.total") %></th>
       <th></th>
     </tr>
   </thead>
@@ -61,7 +61,7 @@
       <td><%= course.total %></td>
       <td>
         <button type="button" name="button" class="btn btn-primary"><i class="fa fa-edit"></i></button>
-        <button type="button" name="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+        <button type="button" name="button" class="btn btn-danger" onclick="window.location.href ='/admin/delete/' + '<%= course.id%>'"><i class="fa fa-trash"></i></button>
       </td>
     </tr>
     <% end %>
@@ -71,9 +71,9 @@
       <th><%= I18n.t("admin.course.code") %></th>
       <th><%= I18n.t("admin.course.subject") %></th>
       <th><%= I18n.t("admin.course.teacher") %></th>
-      <th><%= I18n.t("admin.course.total") %></th>
       <th><%= I18n.t("admin.course.start") %></th>
       <th><%= I18n.t("admin.course.end") %></th>
+      <th><%= I18n.t("admin.course.total") %></th>
       <th></th>
     </tr>
   </tfoot>

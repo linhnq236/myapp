@@ -26,7 +26,9 @@
           <div class="container-fluid">
 
             <% if flash[:notice] %>
-              <div class="notice"><%= flash[:notice] %></div>
+              <div class="alert alert-success text-center" role="alert">
+                <div class="notice"><%= flash[:notice] %></div>
+              </div>
             <% end %>
             <%= yield %>
             <%= include_gon %>
@@ -41,7 +43,9 @@
             <%= render "layouts/share/teacher/header"%>
             <div class="container-fluid">
               <% if flash[:notice] %>
-                <div class="notice"><%= flash[:notice] %></div>
+                <div class="alert alert-success text-center" role="alert">
+                  <div class="notice"><%= flash[:notice] %></div>
+                </div>
               <% end %>
               <%= yield %>
               <%= include_gon %>
@@ -57,7 +61,9 @@
             <%= render "layouts/share/student/header"%>
             <div class="container-fluid">
               <% if flash[:notice] %>
-                <div class="notice"><%= flash[:notice] %></div>
+                <div class="alert alert-success text-center" role="alert">
+                  <div class="notice"><%= flash[:notice] %></div>
+                </div>
               <% end %>
               <%= yield %>
               <%= include_gon %>

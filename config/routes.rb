@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :register_courses
     resources :users
     resources :courses
+    get "delete/:id", to: "courses#delete"
     resources :people
     resources :subjects
     resources :places
@@ -40,6 +41,8 @@ Rails.application.routes.draw do
     resources :departments
     resources :subjects
     resources :places
+    resources :register_courses
+    get "destroy/:id", to: "register_courses#delete"
     resources :notes
     root to: "courses#timetable"
   end

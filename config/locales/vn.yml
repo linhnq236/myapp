@@ -8,9 +8,20 @@ vn:
     title: "TIÊU ĐỀ"
     save: "LƯU"
     id: "STT"
+  personal:
+    email: "Email"
+    name: "Họ và tên"
+    code: "Mã số sinh viên"
+    sex: "Giới tính"
+    born: "Ngày sinh"
+    add: "Địa chỉ"
+    tel: "SĐT"
+    male: "Nam"
+    female: "Nữ"
+    department: "Khoa"
   will_paginate:
-    previous_label: "Trước"
-    next_label: "Sau"
+    previous_label: "<<"
+    next_label: ">>"
   simple_calendar:
     previous: "Trước"
     next: "Sau"
@@ -20,6 +31,7 @@ vn:
     year_names: " Năm "
   admin:
     left:
+      home: "TRANG CHỦ"
       add_bar: "THÊM"
       add:
       add_user: "TÀI KHOẢN MỚI"

@@ -1,6 +1,6 @@
 module Admin
   class NotesController < AdminController
-    DEFAULT_PER_PAGE = 10
+    DEFAULT_PER_PAGE = 7
 
     def index
       @notes = Note.order("created_at DESC").paginate(:page => params[:page], :per_page => DEFAULT_PER_PAGE)

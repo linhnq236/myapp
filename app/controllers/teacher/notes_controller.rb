@@ -1,7 +1,7 @@
 module Teacher
   class NotesController < TeacherController
     before_action :set_note, only: [:show, :edit, :update, :destroy]
-    DEFAULT_PER_PAGE = 10
+    DEFAULT_PER_PAGE = 5
     # GET /notes
     # GET /notes.json
     def index

@@ -96,9 +96,9 @@ end
 end
 
 [
-  {id: 1, email:"linh.nguyen@rikai.technology", password: "password", admin: 1},
-  {id: 2, email:"long.hua@rikai.technology", password: "password", admin: 2},
-  {id: 3, email:"lan.tran@rikai.technology", password: "password", admin: 2},
+  {id: 1, email:"admin@rikai.technology", password: "password", admin: 1},
+  {id: 2, email:"teacher@rikai.technology", password: "password", admin: 2},
+  {id: 3, email:"student@rikai.technology", password: "password", admin: 3},
   {id: 4, email:"lam.dao@rikai.technology", password: "password", admin: 2},
   {id: 5, email:"lien.nguyen@rikai.technology", password: "password", admin: 2},
   {id: 6, email:"loc.le@rikai.technology", password: "password", admin: 2},
