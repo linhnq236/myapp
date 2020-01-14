@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200105175154) do
+ActiveRecord::Schema.define(version: 20200108072736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,9 +88,8 @@ ActiveRecord::Schema.define(version: 20200105175154) do
     t.datetime "check_in_at"
     t.datetime "check_out_at"
     t.date     "date"
-    t.integer  "course_id"
     t.integer  "people_id"
-    t.index ["course_id"], name: "index_places_on_course_id", using: :btree
+    t.integer  "course_id"
   end
 
   create_table "points", force: :cascade do |t|
@@ -140,5 +139,4 @@ ActiveRecord::Schema.define(version: 20200105175154) do
   add_foreign_key "courses", "rooms"
   add_foreign_key "courses", "subjects"
   add_foreign_key "people", "departments"
-  add_foreign_key "places", "courses"
 end

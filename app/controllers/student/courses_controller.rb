@@ -3,7 +3,7 @@ module Student
     skip_before_action :verify_authenticity_token
 
     def index
-      @subjects = Subject.all
+      @subjects = Subject.all.order("id DESC")
       @register_courses = RegisterCourse.includes(:course, :people).order("created_at DESC").where(people_id: current_user.id)
     end
     def show

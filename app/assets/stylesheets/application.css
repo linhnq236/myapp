@@ -16,3 +16,24 @@
  *= require simple_calendar
  */
 /* @import 'bootstrap'; */
+.previous_page, .next_page {
+    border: 1px solid;
+    padding: 0.5%;
+    margin: 0 0.5% 0 0.5%;
+}
+.pagination a .next{
+  background: lightblue;
+}
+.current {
+  border: 1px solid;
+  padding: 0.5%;
+  background: lightblue !important;
+}
+a[rel=next], a[rel=prev] {
+  border: 1px solid;
+  padding: 0.5%;
+}
+a[rel=next]:hover, a[rel=prev]:hover{
+  border: 1px solid;
+  background: none;
+}

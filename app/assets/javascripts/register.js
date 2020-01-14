@@ -19,7 +19,7 @@ $( document ).on('turbolinks:load', function() {
           content: I18n.t("register_course.reg_content"),
           closeIcon: true,
           buttons: {
-            confirm: function () {
+            Ok: function () {
               location.reload();
             },
           }
@@ -30,7 +30,7 @@ $( document ).on('turbolinks:load', function() {
           content: I18n.t("register_course.exists"),
           closeIcon: true,
           buttons: {
-            confirm: function () {
+            Ok: function () {
               // location.reload();
             },
           }

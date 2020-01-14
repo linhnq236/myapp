@@ -1,38 +1,38 @@
 <%= form_tag "/teacher/people/#{@people_id}", method:"PATCH" do %>
   <% @people.each do |p|%>
     <div class="field">
-      <%= label_tag(:q, "Email") %><br />
+      <%= label_tag(:q, "#{t("personal.email")}") %><br />
       <input type="text" name="" value="<%= p.user.email%>", class="form-control" disabled>
     </div>
     <div class="field">
-      <%= label_tag(:q, "Name") %><br />
+      <%= label_tag(:q, "#{t("personal.name")}") %><br />
       <input type="text" name="person_name" value="<%= p.person_name%>", class="form-control">
     </div>
     <div class="field">
-      <%= label_tag(:q, "Code") %><br />
+      <%= label_tag(:q, "#{t("personal.code")}") %><br />
       <input type="text" name="code" value="<%= p.code%>", class="form-control">
     </div>
     <div class="field">
-      <%= label_tag(:q, "Sex") %><br />
+      <%= label_tag(:q, "#{t("personal.sex")}") %><br />
       <select class="form-control" name="sex">
-        <option value="0">Male</option>
-        <option value="1">Female</option>
+        <option value="0" <%= p.sex == "0" ? "selected": ""%> ><%= t("personal.male")%></option>
+        <option value="1" <%= p.sex == "1" ? "selected": ""%> ><%= t("personal.female")%></option>
       </select>
     </div>
     <div class="field">
-      <%= label_tag(:q, "Born") %><br />
+      <%= label_tag(:q, "#{t("personal.born")}") %><br />
       <input type="date" name="born" value="<%= p.born%>", class="form-control">
     </div>
     <div class="field">
-      <%= label_tag(:q, "Address") %><br />
+      <%= label_tag(:q, "#{t("personal.add")}") %><br />
       <input type="text" name="address" value="<%= p.address%>", class="form-control">
     </div>
     <div class="field">
-      <%= label_tag(:q, "Telephone") %><br />
+      <%= label_tag(:q, "#{t("personal.tel")}") %><br />
       <input type="text" name="telephone" value="<%= p.telephone%>", class="form-control">
     </div>
     <div class="field">
-      <%= label_tag(:q, "Department") %><br />
+      <%= label_tag(:q, "#{t("personal.department")}") %><br />
       <input type="text" name="telephone" value="<%= p.department.department_name%>", class="form-control" disabled >
     </div>
     <div class="actions text-center">

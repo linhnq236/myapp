@@ -21,6 +21,7 @@
       <th class="text-center"><%= t("student.course.subject")%></th>
       <th class="text-center"><%= t("student.course.start")%></th>
       <th class="text-center"><%= t("student.course.end")%></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -30,6 +31,9 @@
       <td class="text-center pt-4"><%= register.course.subject.subject_name %></td>
       <td class="text-center pt-4"><%= register.course.start %></td>
       <td class="text-center pt-4"><%= register.course.end %></td>
+      <td>
+        <a href="/student/destroy/<%= register.id%>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+      </td>
     </tr>
     <% end %>
   </tbody>
@@ -39,6 +43,7 @@
       <th class="text-center"><%= t("student.course.subject")%></th>
       <th class="text-center"><%= t("student.course.start")%></th>
       <th class="text-center"><%= t("student.course.end")%></th>
+      <th></th>
     </tr>
   </tfoot>
 </table>

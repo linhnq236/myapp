@@ -29,12 +29,12 @@
     <% @users.each do |user| %>
     <tr data-id = "<%= user.id %>" class="user">
         <td><%= user.person_name %></td>
-        <td><%= user.user.email%></td>
+        <td><%= user.user&.email%></td>
         <td><%= user.code %></td>
         <td>
-          <% if user.user.admin == 1 %>
+          <% if user.user&.admin == 1 %>
             Quan tri vien
-          <% elsif user.user.admin == 2 %>
+          <% elsif user.user&.admin == 2 %>
             teacher
           <% else %>
             Student
